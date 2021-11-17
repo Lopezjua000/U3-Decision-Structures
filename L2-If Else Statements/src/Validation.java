@@ -8,5 +8,18 @@ public class Validation {
      */
 
 
+    public static void main(String[] args) {
+
+
+        int number = Integer.parseInt(JOptionPane.showInputDialog("Please enter a number greater than 10."));
+
+        if(number > 10){
+            JOptionPane.showMessageDialog(null, "You entered a correct number."));
+        }else{
+            JOptionPane.showMessageDialog(null, "Invalid Input. Program Closing."));
+
+        }
+    }
+
 
 }

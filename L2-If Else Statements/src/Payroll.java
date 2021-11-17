@@ -19,8 +19,43 @@ public class Payroll {
 
     public static void main(String[] args) {
 
+        double hours = input("How many hours did you work?");
+        double rate = input("What is your hourly rate?");
 
+        if(hours > 40){
+            output(overtimeWage(hours, rate));
 
+        }else {
+            output(overtimeWage(hours, rate));
+        }
 
     }
+
+    public static double normalWage(double hours, double rate){
+
+        return hours * rate;
+
+    }
+
+    public static double overtimeWage(double hours, double rate){
+
+        double overtime = hours - 40;
+
+        return(40 * rate) + (overtime * (rate * 1.5));
+    }
+
+    public static double input(String prompt){
+
+        return Double.parseDouble(JoptionPane.showInputDialog(prompt));
+
+    }
+
+    public static void output (double wage){
+
+        DecimalFormat round = new DecimalFormat("$#,###.00");
+
+        JOptionPane.showMessageDialog(null, "Your wage is " round.format(wage));
+
+    }
+
 }
